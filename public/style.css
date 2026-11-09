@@ -32,13 +32,48 @@ a{color:inherit}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:3.5rem 2rem;align-items:start}
 .card:nth-child(3n+2){margin-top:3rem}
 .card{display:flex;flex-direction:column;animation:fadeIn 0.6s ease-out forwards}
-.card .pic{position:relative;aspect-ratio:3/4;border-radius:999px 999px 0 0;background:linear-gradient(160deg,var(--terra),var(--sage));overflow:hidden;border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:6px}
-.card img{width:100%;height:320px;object-fit:cover;display:block;border-radius:12px;transition:transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);will-change:transform}
-.card img:hover{transform:scale(1.03) translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.12)}
+.card .pic {
+  position: relative;
+  width: 100%;
+  height: 320px;                 /* Fixed uniform height for all product cards */
+  border-radius: 12px;           /* Clean vertical rectangle shape (removed arch) */
+  background: var(--beige);      /* Neutral background instead of harsh green gradient */
+  overflow: hidden;
+  border: 1px solid var(--gold);
+  outline: 1px solid var(--gold);
+  outline-offset: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* Prevents cutting/cropping your artwork and vases */
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
+}
+.card img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
 .card h3{font-size:1.5rem;margin:1.4rem 0 .2rem}
 .card .meta{color:var(--burnt);font-weight:600}
 .card p{font-size:.95rem;margin:.5rem 0 1rem}
-.sold{position:absolute;inset:auto 0 12% 0;text-align:center;font:italic 1.3rem var(--serif);color:var(--off);text-shadow:0 1px 8px #0007}
+.sold {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: italic 1.2rem var(--serif);
+  color: var(--umber);
+  background: rgba(233, 222, 204, 0.9);
+  padding: 0.2rem 0;
+}
 .empty{grid-column:1/-1;font:italic 1.3rem var(--serif)}
 .about{background:var(--sage);color:var(--umber);padding:6rem clamp(1.2rem,5vw,4rem)}
 .about-in{max-width:44rem;margin-left:auto}.about p{margin-top:1.2rem;font-size:1.1rem}

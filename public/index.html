@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clay &amp; Gold | Hand-painted pottery and canvases</title>
+<meta name="description" content="One-of-a-kind hand-painted vases and canvases in earthy, textured finishes with gold leaf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="/">Clay &amp; Gold</a>
+  <nav><a href="#shop">Shop</a><a href="#about">The studio</a><button class="link" data-ask>Commissions</button></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Painted by hand, one vessel at a time.</h1>
+    <p>Vases and canvases layered in plaster, pigment and gold leaf. Each piece is made once and never repeated.</p>
+    <a class="btn" href="#shop">See what's available</a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="arch arch-sage"></div>
+    <div class="arch arch-main">
+      <svg viewBox="0 0 300 380" role="img" aria-label="Hand-painted vase with gold leaf bands">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#EBD9C6"/><stop offset=".6" stop-color="#D9B79B"/><stop offset="1" stop-color="#B9795A"/></linearGradient>
+        </defs>
+        <path d="M110 40h80c8 0 10 14 6 24-4 12 50 40 50 120 0 90-40 150-96 150S54 274 54 184c0-80 54-108 50-120-4-10-2-24 6-24z" fill="url(#g)"/>
+        <path class="stroke s1" d="M60 168c60-24 122 14 180-8"/>
+        <path class="stroke s2" d="M57 214c72 20 122-26 187-4"/>
+        <path class="stroke s3" d="M64 256c52-10 112 20 172-6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="shop" class="shop">
+  <h2>The collection</h2>
+  <div class="filters" role="group" aria-label="Filter pieces">
+    <button class="chip on" data-f="All">All</button>
+    <button class="chip" data-f="Vases">Vases</button>
+    <button class="chip" data-f="Canvases">Canvases</button>
+    <button class="chip" data-f="Other">Other</button>
+  </div>
+  <div id="grid" class="grid" aria-live="polite"></div>
+</section>
+
+<section id="about" class="about">
+  <div class="about-in">
+    <h2>Made slowly, in layers.</h2>
+    <p>Every vase starts as plain terracotta. I trowel on plaster, scrape it back, wash it with earth-toned pigment and press real gold leaf into the cracks. Canvases follow the same rhythm: texture first, colour second, gold last.</p>
+    <p>Because the process is hands-on, no two pieces match. To buy one, send an inquiry and I'll reply personally with shipping and payment details.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Want something made for your space?</h2>
+  <button class="btn" data-ask>Start a commission</button>
+</section>
+</main>
+
+<footer><span>&copy; <span id="yr"></span> Clay &amp; Gold</span><a href="/admin.html">Studio login</a></footer>
+
+<dialog id="dlg">
+  <form id="form" method="dialog">
+    <h3 id="dlgTitle">Send an inquiry</h3>
+    <label>Your name<input name="name" required maxlength="100" autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+    <label>Message<textarea name="message" required maxlength="2000" rows="4"></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="product_id">
+    <p id="msg" role="status"></p>
+    <div class="row"><button type="button" class="btn ghost" id="close">Close</button><button class="btn" id="send">Send</button></div>
+  </form>
+</dialog>
+<script src="/app.js" defer></script>
+</body>
+</html>
